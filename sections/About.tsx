@@ -5,11 +5,14 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex min-h-screen items-center justify-center py-20"
+      className="relative flex min-h-screen items-center justify-center px-6 pt-32 pb-24"
     >
       <Container>
-        <div className="flex justify-center">
 
+        {/* Centered Wrapper */}
+        <div className="flex w-full justify-center">
+
+          {/* Glass Box */}
           <div
             className="
               relative
@@ -20,12 +23,11 @@ export default function About() {
               border
               border-white/[0.12]
               bg-white/[0.035]
-              px-8
-              py-10
+              p-10
               shadow-[0_8px_40px_rgba(0,0,0,0.25)]
               backdrop-blur-2xl
-              md:px-12
-              md:py-12
+              md:p-14
+              lg:p-16
             "
           >
 
@@ -45,36 +47,22 @@ export default function About() {
               "
             />
 
-            {/* Header */}
-            <div className="relative mb-10 text-center">
-
-              <h2 className="text-5xl font-light tracking-tight md:text-6xl">
-                about
-              </h2>
-
-              <p className="mt-4 text-base text-zinc-400">
-                A glimpse into my journey, interests, and what drives me.
-              </p>
-
-            </div>
-
             {/* Main Content */}
-            <div className="relative grid items-center gap-12 md:grid-cols-[260px_1fr]">
+            <div className="relative grid items-center gap-16 md:grid-cols-[300px_1fr]">
 
               {/* Image */}
-              <div className="mx-auto w-full max-w-[220px]">
+              <div className="mx-auto w-full max-w-[260px]">
 
                 <div
                   className="
-                    overflow-hidden
                     rounded-2xl
                     border
                     border-white/[0.12]
                     bg-white/[0.04]
-                    p-2
+                    p-3
+                    shadow-xl
                   "
                 >
-
                   <Image
                     src="/images/about-photo1.jpeg"
                     alt="Manan"
@@ -82,32 +70,12 @@ export default function About() {
                     height={380}
                     className="h-auto w-full rounded-xl object-cover"
                   />
-
-                </div>
-
-                {/* Social Links */}
-                <div className="mt-6 flex justify-center gap-6 text-xs">
-
-                  <a
-                    href="#"
-                    className="text-zinc-400 transition hover:text-white"
-                  >
-                    linkedin
-                  </a>
-
-                  <a
-                    href="#"
-                    className="text-zinc-400 transition hover:text-white"
-                  >
-                    instagram
-                  </a>
-
                 </div>
 
               </div>
 
               {/* Text */}
-              <div className="space-y-5 text-sm leading-7 text-zinc-300 md:text-base">
+              <div className="space-y-6 text-base leading-8 text-zinc-300">
 
                 <p>
                   Since school, there was always this habit of making things,
@@ -115,23 +83,24 @@ export default function About() {
                   constantly creating something or the other. Looking back,
                   that probably pointed me towards design pretty early on.
                 </p>
+                <br></br>
 
                 <p>
-                  Studied design and animation, and now have around 2 years of
-                  experience, mostly in an early-stage startup where things
-                  moved fast and there was a chance to work on a bit of
-                  everything.
+                  Started developing and designing real life experiences in
+                  the form of websites, and that later transformed into
+                  professional full-stack development. 
                 </p>
+                <br></br>
 
                 <p>
                   Outside of work, there's a strong pull towards visuals and
-                  storytelling, usually through street photography, music, and
+                  storytelling, usually through street videography, music, and
                   just noticing small details in everyday life.
                 </p>
 
                 <p>
-                  Right now, just focused on getting better at the craft,
-                  building meaningful work, and eventually creating products
+                  Right now, just focused on getting better at the work,
+                  building meaningful things, and eventually creating products
                   of my own.
                 </p>
 
@@ -142,6 +111,21 @@ export default function About() {
           </div>
 
         </div>
+
+        {/* Section Label */}
+        <div className="mt-16 pl-6 md:pl-10 lg:pl-16">
+
+          <div className="w-full lg:w-[42%] shrink-0 h-full relative z-10">
+            <h1
+              className="proj-item absolute left-4 bottom--20 text-[clamp(4rem,8vw,7.5rem)] leading-none font-normal text-white"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              about
+            </h1>
+          </div>
+
+        </div>
+
       </Container>
     </section>
   );

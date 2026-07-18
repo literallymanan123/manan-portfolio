@@ -18,7 +18,7 @@ export default function Navbar() {
               width={70}
               height={15}
               priority
-              className="object-contain"
+              className="h-auto w-auto object-contain"
             />
           </a>
 
@@ -26,19 +26,34 @@ export default function Navbar() {
 
           <div className="flex items-center gap-16 text-xl uppercase tracking-wide">
 
-            <a href="/projects" className="transition hover:text-white">
+            <a
+              href="/projects"
+              className="transition hover:text-white"
+            >
               Projects
             </a>
 
-            <a href="/about" className="transition hover:text-white">
+            <a
+              href="/about"
+              className="transition hover:text-white"
+            >
               About
             </a>
 
-            <a href="/contact" className="transition hover:text-white">
+            <a
+              href="/contact"
+              className="transition hover:text-white"
+            >
               Contact
             </a>
 
-            <a href="/skills" className="transition hover:text-white">
+            {/* Resume Download */}
+
+            <a
+              href="/resume.pdf"
+              download="Manan_Resume.pdf"
+              className="transition hover:text-white"
+            >
               Resume
             </a>
 
