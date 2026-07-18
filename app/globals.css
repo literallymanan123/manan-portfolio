@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::selection {
+  background: white;
+  color: black;
+}
+
+body{
+background:#050505;
+}
+
+::selection{
+
+background:white;
+
+color:black;
+
+}
+
+html{
+
+scroll-behavior:auto;
+
+}
+
+img{
+
+user-select:none;
+
+pointer-events:none;
+
+}
