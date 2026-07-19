@@ -15,8 +15,8 @@ export default function Navbar() {
             <Image
               src="/images/logo1.png"
               alt="Manan Logo"
-              width={70}
-              height={15}
+              width={50}
+              height={10}
               priority
               className="h-auto w-auto object-contain"
             />
