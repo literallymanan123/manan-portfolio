@@ -89,9 +89,6 @@ export default function Contact() {
             "
           >
             <div className="mb-12">
-              <p className="contact-item mb-4 text-sm uppercase tracking-[0.25em] text-white/40">
-                Get in touch
-              </p>
 
               <h2
                 className="

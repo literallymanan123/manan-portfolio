@@ -9,12 +9,13 @@ import { ArrowUpRight } from "lucide-react";
 const PROJECTS = [
   {
     id: "01",
-    title: "Flux Dashboard",
-    category: "Web App · Design System",
-    year: "2024",
+    title: "MUSEO",
+    category: "Web App · Digital Experience",
+    year: "2025",
     description:
-      "A real-time analytics dashboard built with a custom design system. Focused on data density without sacrificing clarity — every pixel earns its place.",
-    tags: ["React", "TypeScript", "Figma"],
+      "A mood-based digital art gallery built to make discovering visual content feel more personal. Users select their mood and explore a curated feed of copyright-free images, videos, and music through an immersive Pinterest-inspired experience.",
+    tags: ["Django", "Python", "JavaScript", "REST APIs"],
+    link: "https://museo-seven.vercel.app/",
   },
   {
     id: "02",
@@ -24,6 +25,7 @@ const PROJECTS = [
     description:
       "Full brand identity for an early-stage fintech startup. Covers logo, type system, motion language, and product UI from the ground up.",
     tags: ["Branding", "After Effects", "Illustrator"],
+    link: "#",
   },
   {
     id: "03",
@@ -33,6 +35,7 @@ const PROJECTS = [
     description:
       "A navigation app prototype exploring spatial awareness through haptic feedback and ambient UI patterns. Designed for feel, not just function.",
     tags: ["Figma", "Prototyping", "SwiftUI"],
+    link: "#",
   },
   {
     id: "04",
@@ -42,6 +45,7 @@ const PROJECTS = [
     description:
       "Memory-augmentation tool for knowledge workers. Led the full product design process from discovery and research through to high-fidelity delivery.",
     tags: ["UX Research", "Wireframing", "React"],
+    link: "#",
   },
 ];
 
@@ -57,36 +61,37 @@ export default function Projects() {
   });
 
   return (
-    /*
-     * No background color here — the `bg-[#050505]` was hiding the
-     * DotGrid (ferrofluid) canvas which sits at z-0 behind everything.
-     * The section is transparent so the ferrofluid shows through.
-     */
     <section
       id="projects"
       className="relative text-white"
       style={{ height: "100vh", overflow: "hidden" }}
     >
       <Container>
-        {/*
-         * Two-column split that fills exactly one viewport height.
-         * Left: fixed heading text  |  Right: internally-scrolling card stack
-         */}
-        <div className="flex h-screen gap-16 lg:gap-24 items-center">
+        <div className="flex h-screen items-center gap-16 lg:gap-24">
 
-          {/* ── Left column: heading ── */}
-          <div className="w-full lg:w-[42%] shrink-0 h-full relative z-10">
+          {/* Left column: heading */}
+          <div className="relative z-10 h-full w-full shrink-0 lg:w-[42%]">
             <h1
-              className="proj-item absolute left-8 bottom-16 text-[clamp(4rem,8vw,7.5rem)] leading-none font-normal text-white"
-              style={{ fontFamily: "var(--font-serif)" }}
+              className="
+                proj-item
+                absolute
+                bottom-16
+                left-8
+                text-[clamp(4rem,8vw,7.5rem)]
+                font-normal
+                leading-none
+                text-white
+              "
+              style={{
+                fontFamily: "var(--font-serif)",
+              }}
             >
               projects
             </h1>
           </div>
-          
 
-          {/* ── Right column: ScrollStack (self-contained scroll) ── */}
-          <div className="hidden lg:block flex-1 h-full relative">
+          {/* Right column: ScrollStack */}
+          <div className="relative hidden h-full flex-1 lg:block">
             <ScrollStack
               itemDistance={110}
               itemScale={0.04}
@@ -98,56 +103,112 @@ export default function Projects() {
             >
               {PROJECTS.map((p) => (
                 <ScrollStackItem key={p.id}>
-                  <div className="relative w-full h-full flex flex-col justify-between p-10 select-none bg-black/20 backdrop-blur-md rounded-[24px]">
-
-                    {/* top meta */}
+                  <div
+                    className="
+                      relative
+                      flex
+                      h-full
+                      w-full
+                      select-none
+                      flex-col
+                      justify-between
+                      rounded-[24px]
+                      bg-black/20
+                      p-10
+                      backdrop-blur-md
+                    "
+                  >
+                    {/* Top meta */}
                     <div className="flex items-start justify-between">
-                      <span className="text-[10px] tracking-[0.25em] uppercase text-zinc-600">
+                      <span className="text-[10px] uppercase tracking-[0.25em] text-zinc-600">
                         {p.id} &mdash; {p.category}
                       </span>
-                      <span className="text-xs text-zinc-700">{p.year}</span>
+
+                      <span className="text-xs text-zinc-700">
+                        {p.year}
+                      </span>
                     </div>
 
-                    {/* title + description */}
+                    {/* Title + description */}
                     <div>
                       <h2
-                        className="text-[clamp(1.8rem,3vw,2.8rem)] font-normal text-white leading-tight mb-3"
-                        style={{ fontFamily: "var(--font-serif)" }}
+                        className="
+                          mb-3
+                          text-[clamp(1.8rem,3vw,2.8rem)]
+                          font-normal
+                          leading-tight
+                          text-white
+                        "
+                        style={{
+                          fontFamily: "var(--font-serif)",
+                        }}
                       >
                         {p.title}
                       </h2>
-                      <p className="text-sm text-zinc-500 leading-relaxed">
+
+                      <p className="text-sm leading-relaxed text-zinc-500">
                         {p.description}
                       </p>
                     </div>
 
-                    {/* tags + view link */}
-                    <div className="flex items-center justify-between">
+                    {/* Tags + view link */}
+                    <div className="flex items-center justify-between gap-6">
                       <div className="flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
+                        {p.tags.map((tag) => (
                           <span
-                            key={t}
-                            className="text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-full border border-white/[0.07] text-zinc-600"
+                            key={tag}
+                            className="
+                              rounded-full
+                              border
+                              border-white/[0.07]
+                              px-2.5
+                              py-1
+                              text-[10px]
+                              uppercase
+                              tracking-widest
+                              text-zinc-600
+                            "
                           >
-                            {t}
+                            {tag}
                           </span>
                         ))}
                       </div>
-                      <button className="flex items-center gap-1.5 text-xs text-zinc-600 hover:text-white transition-colors duration-300 group/btn">
+
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          group/btn
+                          flex
+                          shrink-0
+                          items-center
+                          gap-1.5
+                          text-xs
+                          text-zinc-600
+                          transition-colors
+                          duration-300
+                          hover:text-white
+                        "
+                      >
                         view
+
                         <ArrowUpRight
                           size={14}
-                          className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-300"
+                          className="
+                            transition-transform
+                            duration-300
+                            group-hover/btn:translate-x-0.5
+                            group-hover/btn:-translate-y-0.5
+                          "
                         />
-                      </button>
+                      </a>
                     </div>
-
                   </div>
                 </ScrollStackItem>
               ))}
             </ScrollStack>
           </div>
-
         </div>
       </Container>
     </section>
