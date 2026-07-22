@@ -15,7 +15,7 @@ export default function Navbar() {
             <Image
               src="/images/logo1.png"
               alt="Manan Logo"
-              width={50}
+              width={62}
               height={10}
               priority
               className="h-auto w-auto object-contain"
@@ -50,7 +50,7 @@ export default function Navbar() {
             {/* Resume Download */}
 
             <a
-              href="/resume.pdf"
+              href="/Manan_Resume.pdf"
               download="Manan_Resume.pdf"
               className="transition hover:text-white"
             >
