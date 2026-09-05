@@ -15,37 +15,17 @@ const PROJECTS = [
     description:
       "A mood-based digital art gallery built to make discovering visual content feel more personal. Users select their mood and explore a curated feed of copyright-free images, videos, and music through an immersive Pinterest-inspired experience.",
     tags: ["Django", "Python", "JavaScript", "REST APIs"],
-    link: "https://museo-seven.vercel.app/",
+    link: "https://remuseo.vercel.app/",
   },
   {
     id: "02",
-    title: "Stratum",
+    title: "RemoteDesk",
     category: "Brand · Motion",
     year: "2024",
     description:
-      "Full brand identity for an early-stage fintech startup. Covers logo, type system, motion language, and product UI from the ground up.",
-    tags: ["Branding", "After Effects", "Illustrator"],
-    link: "#",
-  },
-  {
-    id: "03",
-    title: "Meridian",
-    category: "Mobile · Interaction",
-    year: "2023",
-    description:
-      "A navigation app prototype exploring spatial awareness through haptic feedback and ambient UI patterns. Designed for feel, not just function.",
-    tags: ["Figma", "Prototyping", "SwiftUI"],
-    link: "#",
-  },
-  {
-    id: "04",
-    title: "Recall",
-    category: "Product · UX Research",
-    year: "2023",
-    description:
-      "Memory-augmentation tool for knowledge workers. Led the full product design process from discovery and research through to high-fidelity delivery.",
-    tags: ["UX Research", "Wireframing", "React"],
-    link: "#",
+      "A cross-platform remote desktop application built with Electron and WebRTC, enabling peer-to-peer screen sharing and full mouse/keyboard control between devices using a lightweight custom signaling server.",
+    tags: ["Electron", "WebRTC", "Next.js"],
+    link: "https://remotedesk-psi.vercel.app/",
   },
 ];
 
