@@ -14,18 +14,28 @@ const PROJECTS = [
     year: "2025",
     description:
       "A mood-based digital art gallery built to make discovering visual content feel more personal. Users select their mood and explore a curated feed of copyright-free images, videos, and music through an immersive Pinterest-inspired experience.",
-    tags: ["Django", "Python", "JavaScript", "REST APIs"],
+    tags: ["Next.js", "TypeScript", "Tailwind"],
     link: "https://remuseo.vercel.app/",
   },
   {
     id: "02",
     title: "RemoteDesk",
-    category: "Brand · Motion",
-    year: "2024",
+    category: "Web App",
+    year: "2026",
     description:
       "A cross-platform remote desktop application built with Electron and WebRTC, enabling peer-to-peer screen sharing and full mouse/keyboard control between devices using a lightweight custom signaling server.",
     tags: ["Electron", "WebRTC", "Next.js"],
     link: "https://remotedesk-psi.vercel.app/",
+  },
+  {
+    id: "03",
+    title: "Ember-Journal",
+    category: "Web App",
+    year: "2026",
+    description:
+      "Ember Journal is an immersive journaling application that features a cozy, interactive desk-themed dashboard complete with ambient background music, dynamic lighting controls, and a polished, secure user experience.",
+    tags: ["Jamendo API", "CSS Animations", "Next.js"],
+    link: "https://emberjournal.vercel.app/",
   },
 ];
 
