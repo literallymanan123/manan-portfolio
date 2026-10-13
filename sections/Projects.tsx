@@ -1,10 +1,9 @@
 "use client";
 
 import Container from "@/components/layout/Container";
-import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
+import OptionWheel from "@/components/OptionWheel";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight } from "lucide-react";
 
 const PROJECTS = [
   {
@@ -13,7 +12,7 @@ const PROJECTS = [
     category: "Web App · Digital Experience",
     year: "2025",
     description:
-      "A mood-based digital art gallery built to make discovering visual content feel more personal. Users select their mood and explore a curated feed of copyright-free images, videos, and music through an immersive Pinterest-inspired experience.",
+      "A mood-based digital art gallery designed to make visual discovery feel deeply personal. Users can select their emotional state and seamlessly explore a highly curated, dynamic feed of copyright-free images, videos, and music within an immersive, fluid, and Pinterest-inspired interface.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
     link: "https://remuseo.vercel.app/",
   },
@@ -23,7 +22,7 @@ const PROJECTS = [
     category: "Web App",
     year: "2026",
     description:
-      "A cross-platform remote desktop application built with Electron and WebRTC, enabling peer-to-peer screen sharing and full mouse/keyboard control between devices using a lightweight custom signaling server.",
+      "A powerful cross-platform remote desktop application built entirely with modern web technologies like Electron and WebRTC. It enables ultra-low-latency peer-to-peer screen sharing and comprehensive mouse/keyboard control between devices via a highly optimized custom signaling server.",
     tags: ["Electron", "WebRTC", "Next.js"],
     link: "https://remotedesk-psi.vercel.app/",
   },
@@ -33,9 +32,19 @@ const PROJECTS = [
     category: "Web App",
     year: "2026",
     description:
-      "Ember Journal is an immersive journaling application that features a cozy, interactive desk-themed dashboard complete with ambient background music, dynamic lighting controls, and a polished, secure user experience.",
+      "An incredibly immersive and cozy journaling application featuring an interactive, 3D desk-themed dashboard. Complete with integrated ambient background music, dynamic virtual lighting controls, and a polished, ultra-secure user experience to elevate your daily reflections.",
     tags: ["Jamendo API", "CSS Animations", "Next.js"],
     link: "https://emberjournal.vercel.app/",
+  },
+  {
+    id: "04",
+    title: "Kloudera Technologies",
+    category: "Corporate Website",
+    year: "2026",
+    description:
+      "The official digital presence for Kloudera Technologies. Engineered to deliver a striking, high-performance web experience that effortlessly conveys enterprise-level capabilities through sleek animations, modern aesthetics, and seamless user navigation.",
+    tags: ["Next.js", "Web Design"],
+    link: "https://www.kloudera.ai",
   },
 ];
 
@@ -80,124 +89,36 @@ export default function Projects() {
             </h1>
           </div>
 
-          {/* Right column: ScrollStack */}
-          <div className="relative hidden h-full flex-1 lg:block">
-            <ScrollStack
-              itemDistance={110}
-              itemScale={0.04}
-              itemStackDistance={28}
-              stackPosition="20%"
-              scaleEndPosition="92%"
-              baseScale={0.88}
-              blurAmount={20}
-            >
-              {PROJECTS.map((p) => (
-                <ScrollStackItem key={p.id}>
-                  <div
-                    className="
-                      relative
-                      flex
-                      h-full
-                      w-full
-                      select-none
-                      flex-col
-                      justify-between
-                      rounded-[24px]
-                      bg-black/20
-                      p-10
-                      backdrop-blur-md
-                    "
-                  >
-                    {/* Top meta */}
-                    <div className="flex items-start justify-between">
-                      <span className="text-[10px] uppercase tracking-[0.25em] text-zinc-600">
-                        {p.id} &mdash; {p.category}
-                      </span>
-
-                      <span className="text-xs text-zinc-700">
-                        {p.year}
-                      </span>
-                    </div>
-
-                    {/* Title + description */}
-                    <div>
-                      <h2
-                        className="
-                          mb-3
-                          text-[clamp(1.8rem,3vw,2.8rem)]
-                          font-normal
-                          leading-tight
-                          text-white
-                        "
-                        style={{
-                          fontFamily: "var(--font-serif)",
-                        }}
-                      >
-                        {p.title}
-                      </h2>
-
-                      <p className="text-sm leading-relaxed text-zinc-500">
-                        {p.description}
-                      </p>
-                    </div>
-
-                    {/* Tags + view link */}
-                    <div className="flex items-center justify-between gap-6">
-                      <div className="flex flex-wrap gap-2">
-                        {p.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="
-                              rounded-full
-                              border
-                              border-white/[0.07]
-                              px-2.5
-                              py-1
-                              text-[10px]
-                              uppercase
-                              tracking-widest
-                              text-zinc-600
-                            "
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <a
-                        href={p.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="
-                          group/btn
-                          flex
-                          shrink-0
-                          items-center
-                          gap-1.5
-                          text-xs
-                          text-zinc-600
-                          transition-colors
-                          duration-300
-                          hover:text-white
-                        "
-                      >
-                        view
-
-                        <ArrowUpRight
-                          size={14}
-                          className="
-                            transition-transform
-                            duration-300
-                            group-hover/btn:translate-x-0.5
-                            group-hover/btn:-translate-y-0.5
-                          "
-                        />
-                      </a>
-                    </div>
+          {/* Right column: OptionWheel */}
+          <div className="relative hidden h-full flex-1 lg:block w-full">
+            <OptionWheel
+              defaultSelected={1}
+              spacing={2.6}
+              inset={100}
+              side="right"
+              loop={true}
+              autoScroll={true}
+              autoScrollSpeed={0.002}
+              smoothing={400}
+              onItemClick={(index) => {
+                window.open(PROJECTS[index].link, "_blank");
+              }}
+              items={PROJECTS.map((p) => (
+                <div key={p.id} className="flex flex-col items-end text-right group">
+                  <div className="flex items-center gap-3">
+                    <span 
+                      className="text-[clamp(1.8rem,3vw,2.8rem)] font-normal leading-tight group-hover:text-white transition-colors"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      {p.title}
+                    </span>
                   </div>
-                </ScrollStackItem>
+                  <span className="text-sm text-zinc-500 font-sans tracking-wide max-w-[450px] line-clamp-3 leading-relaxed mt-2">
+                    {p.description}
+                  </span>
+                </div>
               ))}
-            </ScrollStack>
+            />
           </div>
         </div>
       </Container>

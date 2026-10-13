@@ -51,7 +51,7 @@ export default function Navbar() {
 
             <a
               href="/Manan_Resume.pdf"
-              download="Manan_Resume.pdf"
+              download="manan-resume-26.pdf"
               className="transition hover:text-white"
             >
               Resume
